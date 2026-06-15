@@ -205,7 +205,6 @@
             label = "APADAGO";
             #binding-cells = <0>;
             bindings = <&none>, <&soft_off>;
-
             tapping-term-ms = <300>;
         };
     };
