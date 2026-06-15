@@ -1,6 +1,17 @@
 ---
 include:
+  # Compilaciones para el primer teclado (Corne)
   - board: nice_nano_v2
     shield: corne_left
+    conf: corne.conf
   - board: nice_nano_v2
     shield: corne_right
+    conf: corne.conf
+    
+  # Compilaciones para el segundo teclado (Corne2)
+  - board: nice_nano_v2
+    shield: corne_left
+    conf: corne2.conf
+  - board: nice_nano_v2
+    shield: corne_right
+    conf: corne2.conf
