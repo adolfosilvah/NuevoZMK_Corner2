@@ -184,7 +184,7 @@
 
         RAISE_LAYER {
             bindings = <
-&kp ESC   &kp LEFT_WIN      &kp PAGE_DOWN            &kp UP_ARROW            &kp PAGE_UP        &kp DEL          &kp PLUS   &kp N7        &kp N8        &kp N9        &kp ASTRK   &trans
+&trans    &kp LEFT_WIN      &kp PAGE_DOWN            &kp UP_ARROW            &kp PAGE_UP        &kp DEL          &kp PLUS   &kp N7        &kp N8        &kp N9        &kp ASTRK   &trans
 &kp LALT  &kp SPACE         &kp LEFT_ARROW           &kp DOWN_ARROW          &kp RIGHT          &kp BACKSPACE    &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp SLASH   &kp COLON
 &trans    &kp LS(LG(LEFT))  &kp LS(LG(RIGHT_ARROW))  &kp LC(LG(LEFT_ARROW))  &kp LC(LG(RIGHT))  &kp LG(LS(S))    &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_DOT  &trans
                                                      &trans                  &trans             &trans           &trans     &trans        &trans
@@ -193,10 +193,10 @@
 
         LOWER_LAYER {
             bindings = <
-&kp ESC  &kp EXCL          &kp AT     &kp HASH           &kp DOLLAR     &kp PERCENT         &kp PLUS        &kp AMPERSAND  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &trans
-&trans   &kp TILDE         &kp CARET  &kp APOS           &kp LESS_THAN  &kp GREATER_THAN    &kp MINUS       &kp EQUAL      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE       &kp SINGLE_QUOTE
-&trans   &kp RA(RS(SEMI))  &none      &kp DOUBLE_QUOTES  &none          &Captura            &kp UNDERSCORE  &kp ASTERISK   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH      &trans
-                                      &trans             &trans         &trans              &trans          &trans         &trans
+&trans  &kp EXCL          &kp AT     &kp HASH           &kp DOLLAR     &kp PERCENT         &kp PLUS        &kp AMPERSAND  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &trans
+&trans  &kp TILDE         &kp CARET  &kp APOS           &kp LESS_THAN  &kp GREATER_THAN    &kp MINUS       &kp EQUAL      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE       &kp SINGLE_QUOTE
+&trans  &kp RA(RS(SEMI))  &none      &kp DOUBLE_QUOTES  &none          &Captura            &kp UNDERSCORE  &kp ASTERISK   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH      &trans
+                                     &trans             &trans         &trans              &trans          &trans         &trans
             >;
         };
 
@@ -213,7 +213,7 @@
             bindings = <
 &trans  &none  &kp LC(UP)          &kp LC(PAGE_UP)    &kp LC(HOME)   &kp LC(LS(TAB))    &trans  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &none             &none  &trans
 &none   &none  &kp LC(DOWN_ARROW)  &kp LC(PAGE_DOWN)  &kp LC(END)    &kp LC(TAB)        &trans  &kp C_VOL_DN     &kp C_VOLUME_UP    &kp C_PLAY_PAUSE  &none  &trans
-&trans  &none  &none               &kp LC(LEFT)       &kp LC(RIGHT)  &none              &trans  &kp DEL          &kp C_MUTE         &trans            &none  &trans
+&trans  &none  &none               &kp LC(LEFT)       &kp LC(RIGHT)  &none              &trans  &kp DEL          &kp C_MUTE         &none             &none  &trans
                                    &trans             &trans         &trans             &trans  &trans           &trans
             >;
         };
@@ -229,10 +229,10 @@
 
         LAYER_6 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans   &kp F13  &kp F14  &kp F15  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans   &kp F16  &kp F17  &kp F18  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &none     &kp A    &kp F19  &kp F20  &kp F21  &trans  &trans
-                        &trans  &trans  &trans    &kp F22  &kp F23  &kp F24
+&trans  &none  &none  &none   &none   &none     &none   &none   &none   &none  &none  &none
+&trans  &none  &none  &none   &none   &none     &none   &none   &none   &none  &none  &none
+&trans  &none  &none  &none   &none   &none     &none   &none   &none   &none  &none  &trans
+                      &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
