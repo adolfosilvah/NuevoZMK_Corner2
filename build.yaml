@@ -1,22 +1,6 @@
 ---
 include:
-  # --- Teclado 1 ---
   - board: nice_nano_v2
     shield: corne_left
-    conf: corne.conf
-    snippet: zmk-usb-logging
-    rename: corne-left.uf2    # <--- Nombre único
   - board: nice_nano_v2
     shield: corne_right
-    conf: corne.conf
-    rename: corne-right.uf2  # <--- Nombre único
-
-  # --- Teclado 2 ---
-  - board: nice_nano_v2
-    shield: corne_left
-    conf: corne2.conf
-    rename: corne2-left.uf2  # <--- Nombre único diferenciado
-  - board: nice_nano_v2
-    shield: corne_right
-    conf: corne2.conf
-    rename: corne2-right.uf2 # <--- Nombre único diferenciado
