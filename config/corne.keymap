@@ -45,12 +45,12 @@
         CommandPalette { bindings = <&kp LA(LG(SPACE))>; key-positions = <26 27 28>; };
         Alt-Tab        { bindings = <&kp LA(TAB)>;      key-positions = <26 27>; };
 
-        /* Bluetooth y Energía */
+        /* Bluetooth y Energía 
         Soft-Off       { bindings = <&soft_off>;        key-positions = <0 29>; };
         BTClear        { bindings = <&bt BT_CLR_ALL>;   key-positions = <1 4>; layers = <4>; };
         BT0            { bindings = <&bt BT_SEL 0>;     key-positions = <1 13>; };
         BT1            { bindings = <&bt BT_SEL 1>;     key-positions = <2 14>; layers = <4>; };
-        BT2            { bindings = <&bt BT_SEL 2>;     key-positions = <3 15>; layers = <4>; };
+        BT2            { bindings = <&bt BT_SEL 2>;     key-positions = <3 15>; layers = <4>; };*/
     };
 
     /* --- BEHAVIORS --- */
@@ -139,7 +139,7 @@
 
         layer_6 {
             bindings = <
-&trans  &BT1      &BT1    &BT2    &BT3    &BTAll    &trans   &kp F13  &kp F14  &kp F15  &trans  &trans
+&trans  &trans      &trans    &trans    &trans    &trans    &trans   &kp F13  &kp F14  &kp F15  &trans  &trans
 &trans  &Apadago  &trans  &trans  &trans  &trans    &trans   &kp F16  &kp F17  &kp F18  &trans  &trans
 &trans  &trans    &trans  &trans  &trans  &none     &kp A    &kp F19  &kp F20  &kp F21  &trans  &trans
                           &trans  &trans  &trans    &kp F22  &kp F23  &kp F24
