@@ -1,8 +1,9 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+/* ==========================================================================
+ * ZMK KEYMAP - CORNE - ADOLF (Final - Completo)
+ * ========================================================================== */
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define DEFAULT_LAYER 0
 #define RAISE_LAYER 1
@@ -12,212 +13,73 @@
 #define LAYER_5 5
 #define LAYER_6 6
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-
-&soft_off {
-    hold-time-ms = <5000>; // Tiempo en milisegundos que se debe mantener presionada la tecla para activar el soft off
-};
-
-&mt {
-    tapping-term-ms = <200>;
-    quick-tap-ms = <100>;
-    bindings = <&kp>, <&kp>;
-
-    flavor = "balanced";
-};
 
 / {
+    // --- CONFIGURACIÓN GLOBAL DE BEHAVIORS ---
+    &soft_off { hold-time-ms = <0>; };
+    &mt { tapping-term-ms = <200>; quick-tap-ms = <100>; bindings = <&kp>, <&kp>; flavor = "balanced"; };
+
+    /* --- COMBOS --- */
     combos {
         compatible = "zmk,combos";
 
-        Backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <19 20>;
-        };
+        /* Edición y Texto */
+        Backspace      { bindings = <&kp BACKSPACE>;    key-positions = <19 20>; };
+        Borrar-palabra { bindings = <&kp LC(BACKSPACE)>; key-positions = <19 20 21>; };
+        Copiar         { bindings = <&kp LC(C)>;        key-positions = <3 2>; };
+        Cortar         { bindings = <&kp LC(X)>;        key-positions = <2 3 4>; };
+        Pegar          { bindings = <&kp LC(V)>;        key-positions = <14 15>; };
+        pegarTex       { bindings = <&kp LC(LS(V))>;    key-positions = <14 15 16>; };
+        Desacer        { bindings = <&kp LC(Z)>;        key-positions = <25 26>; };
+        Reacer         { bindings = <&kp LC(Y)>;        key-positions = <1 2>; };
+        delete         { bindings = <&kp DEL>;          key-positions = <7 8>; };
+        EnterDerecho   { bindings = <&kp ENTER>;        key-positions = <20 21>; };
 
-        Copiar {
-            bindings = <&kp LC(C)>;
-            key-positions = <3 2>;
-        };
+        /* Navegación y Sistema */
+        Page-Up        { bindings = <&kp PAGE_UP>;      key-positions = <8 9>; require-prior-idle-ms = <40>; };
+        Page-Down      { bindings = <&kp PAGE_DOWN>;    key-positions = <32 33>; require-prior-idle-ms = <40>; };
+        Home-          { bindings = <&kp HOME>;         key-positions = <7 8 9>; };
+        End-           { bindings = <&kp END>;          key-positions = <31 32 33>; };
+        Com-tab        { bindings = <&kp TAB>;          key-positions = <15 16>; };
+        space          { bindings = <&kp SPACE>;        key-positions = <28 27>; };
+        CommandPalette { bindings = <&kp LA(LG(SPACE))>; key-positions = <26 27 28>; };
+        Alt-Tab        { bindings = <&kp LA(TAB)>;      key-positions = <26 27>; };
 
-        Pegar {
-            bindings = <&kp LC(V)>;
-            key-positions = <14 15>;
-        };
-
-        Cortar {
-            bindings = <&kp LC(X)>;
-            key-positions = <2 3 4>;
-        };
-
-        pegarTex {
-            bindings = <&kp LC(LS(V))>;
-            key-positions = <14 15 16>;
-        };
-
-        Borrar-palabra {
-            bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <19 20 21>;
-        };
-
-        Soft-Off {
-            bindings = <&soft_off>;
-            key-positions = <0 29>;
-        };
-
-        Page-Up {
-            bindings = <&kp PAGE_UP>;
-            key-positions = <8 9>;
-            require-prior-idle-ms = <40>;
-        };
-
-        Page-Down {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <32 33>;
-            require-prior-idle-ms = <40>;
-        };
-
-        Home- {
-            bindings = <&kp HOME>;
-            key-positions = <7 8 9>;
-        };
-
-        End- {
-            bindings = <&kp END>;
-            key-positions = <31 32 33>;
-        };
-
-        delete {
-            bindings = <&kp DEL>;
-            key-positions = <7 8>;
-        };
-
-        btclear {
-            bindings = <&bt BT_CLR_ALL>;
-            key-positions = <1 4>;
-            layers = <4>;
-        };
-
-        bt0 {
-            bindings = <&bt BT_SEL 0>;
-            key-positions = <1 13>;
-        };
-
-        bt1 {
-            bindings = <&bt BT_SEL 1>;
-            key-positions = <2 14>;
-            layers = <4>;
-        };
-
-        bt2 {
-            bindings = <&bt BT_SEL 2>;
-            key-positions = <3 15>;
-            layers = <4>;
-        };
-
-        Com-tab {
-            bindings = <&kp TAB>;
-            key-positions = <15 16>;
-        };
-
-        space {
-            bindings = <&kp SPACE>;
-            key-positions = <28 27>;
-        };
-
-        Desacer {
-            bindings = <&kp LC(Z)>;
-            key-positions = <25 26>;
-        };
-
-        Reacer {
-            bindings = <&kp LC(Y)>;
-            key-positions = <1 2>;
-        };
-
-        Alt-Tab {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <26 27>;
-        };
-
-        EnterDerecho {
-            bindings = <&kp ENTER>;
-            key-positions = <20 21>;
-        };
-
-        CommandPalette {
-            bindings = <&kp LA(LG(SPACE))>;
-            key-positions = <26 27 28>;
-        };
+        /* Bluetooth y Energía */
+        Soft-Off       { bindings = <&soft_off>;        key-positions = <0 29>; };
+        btclear        { bindings = <&bt BT_CLR_ALL>;   key-positions = <1 4>; layers = <4>; };
+        bt0            { bindings = <&bt BT_SEL 0>;     key-positions = <1 13>; };
+        bt1            { bindings = <&bt BT_SEL 1>;     key-positions = <2 14>; layers = <4>; };
+        bt2            { bindings = <&bt BT_SEL 2>;     key-positions = <3 15>; layers = <4>; };
     };
 
+    /* --- BEHAVIORS --- */
     behaviors {
+
+        /* Tap Dances */
         Ene_ene: Ene_ene {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ENE_ENE";
-            #binding-cells = <0>;
-            bindings = <&kp N>, <&kp RA(N)>;
+            compatible = "zmk,behavior-tap-dance"; label = "ENE_ENE"; #binding-cells = <0>; bindings = <&kp N>, <&kp RA(N)>;
         };
-
-        Hm: Hm {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HM";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-        };
-
-        Bt1: Bt1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BT1";
-            #binding-cells = <0>;
-            bindings = <&none>, <&bt BT_SEL 0>;
-        };
-
-        BT2: BT2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BT2";
-            #binding-cells = <0>;
-            bindings = <&none>, <&bt BT_SEL 1>;
-        };
-
-        BT3: BT3 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BT3";
-            #binding-cells = <0>;
-            bindings = <&none>, <&bt BT_SEL 2>;
-        };
-
-        BTAll: BTAll {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BTALL";
-            #binding-cells = <0>;
-            bindings = <&none>, <&bt BT_CLR_ALL>;
-        };
-
-        Apadago: Apadago {
-            compatible = "zmk,behavior-tap-dance";
-            label = "APADAGO";
-            #binding-cells = <0>;
-            bindings = <&none>, <&soft_off>;
+        Bt1: Bt1 { compatible = "zmk,behavior-tap-dance"; label = "BT1"; #binding-cells = <0>; bindings = <&none>, <&bt BT_SEL 0>; };
+        BT2: BT2 { compatible = "zmk,behavior-tap-dance"; label = "BT2"; #binding-cells = <0>; bindings = <&none>, <&bt BT_SEL 1>; };
+        BT3: BT3 { compatible = "zmk,behavior-tap-dance"; label = "BT3"; #binding-cells = <0>; bindings = <&none>, <&bt BT_SEL 2>; };
+        BTAll: BTAll { compatible = "zmk,behavior-tap-dance"; label = "BTALL"; #binding-cells = <0>; bindings = <&none>, <&bt BT_CLR_ALL>; };
+        Apadago: Apadago { 
+            compatible = "zmk,behavior-tap-dance"; label = "APADAGO"; #binding-cells = <0>; bindings = <&none>, <&soft_off>;
             tapping-term-ms = <300>;
         };
-    };
 
-    macros {
-        Captura: M1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(LS(S))>;
-            label = "M1";
+        /* Hold-Taps */
+        Hm: Hm {
+            compatible = "zmk,behavior-hold-tap"; label = "HM"; bindings = <&kp>, <&kp>; #binding-cells = <2>;
+            tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred";
         };
     };
 
+    /* --- MACROS --- */
+    macros {
+        Captura: M1 { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LG(LS(S))>; label = "M1"; };
+    };
     keymap {
         compatible = "zmk,keymap";
         default_layer = <0>; // Establece la capa 0 como predeterminada
@@ -287,15 +149,7 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
-        capa5 {
-            if-layers = <1 4>;
-            then-layer = <5>;
-        };
-
-        Capa3 {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
+        capa5 { if-layers = <1 4>; then-layer = <5>; };
+        Capa3 { if-layers = <1 2>; then-layer = <3>; };
     };
 };
