@@ -1,4 +1,5 @@
 Configuración de Segundo Corne. 
+
 Nombre del teclado Corne2
 
 Cambios significativos:
